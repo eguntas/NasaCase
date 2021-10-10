@@ -1,9 +1,8 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace NASACaseTEST
+namespace UnitTestProject1
 {
     [TestClass]
     public class UnitTest1
@@ -11,32 +10,34 @@ namespace NASACaseTEST
         [TestMethod]
         public void TestSenario_12N()
         {
-            NASACase.Position position = new NASACase.Position() {
+            NASACase.Position position = new NASACase.Position()
+            {
 
                 X = 1,
                 Y = 2,
                 Yon = NASACase.Yons.N
-                };
+            };
 
             var duzlemkordinat = new List<int> { 1, 2 };
             var harekets = "LMLMLMLMM";
 
-            position.StartMove(duzlemkordinat , harekets);
+            position.StartMove(duzlemkordinat, harekets);
 
             var alinansonuc = position.X + " " + position.Y + " " + position.Yon;
             var beklenensonuc = "1 3 N";
 
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(beklenensonuc , alinansonuc);
-            
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(beklenensonuc, alinansonuc);
+
         }
         [TestMethod]
         public void TestSenario_33E()
         {
-            NASACase.Position position = new NASACase.Position() { 
-            X = 3,
-            Y = 3,
-            Yon = NASACase.Yons.E
-            
+            NASACase.Position position = new NASACase.Position()
+            {
+                X = 3,
+                Y = 3,
+                Yon = NASACase.Yons.E
+
             };
 
             var duzlemkordinat = new List<int> { 3, 3 };
